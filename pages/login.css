@@ -1,0 +1,73 @@
+.login-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 7rem;
+    align-items: center;
+    text-align: center;
+    flex-direction: row;
+    
+    /* border: 1px solid black; */
+}
+
+.flex-check{
+    flex-direction: column;
+}
+
+.login-card{
+    width: 20rem;
+    /* height: 25rem; */
+    padding: 1rem;
+    border: 1px solid black;
+    /* background-color: white; */
+}
+
+
+.bottom-card{
+    width: 20rem;
+    margin-top: 1rem;
+    padding: 1rem;
+    border: 1px solid #ccc;
+
+}
+
+@media only screen and (max-width:500px)
+{
+    .login-card{
+        width:100%;
+    }
+    .bottom-card{
+        width: 100%;
+    }
+    .carbg{
+        display: none;
+    }
+
+}
+
+
+@media only screen and (max-width:700px)
+{
+   
+    .carbg{
+        display: none;
+    }
+
+}
+
+.carbg{
+    background: url('../asserts/home-phones.png');
+    background-size: cover;
+    right: 50px;
+    height: 610px;
+    width: 400px;
+    position: relative;
+}
+
+.car{
+    
+    position: absolute;
+    height: 415px;
+    width: 250px;
+    top: 14px;
+    left: 144px
+}
