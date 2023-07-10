@@ -3,12 +3,25 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import Feed from '../components/feed'
+import { AuthContext } from '@/context/AuthWrapper'
+import {useContext} from 'react'
+import { redirect } from 'next/dist/server/api-utils'
+import { useRouter } from 'next/router'
 
 
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+ 
+  const {user} = useContext(AuthContext);
+
+  const Redirect = () => {
+    const router =useRouter()
+    router.push('/login');
+    return null;
+  }
+
   return (
     <div>
      
@@ -19,8 +32,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       
+      {
+        user?.uid ? <Feed /> : <Redirect />
+      }
       
-      <Feed />
+      {/* <Feed /> */}
   
       {/* <main className={`${styles.main} ${inter.className}`}>
         <div className={styles.description}>

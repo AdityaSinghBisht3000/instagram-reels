@@ -12,7 +12,7 @@ import bg2 from '../../asserts/bg2.png'
 import bg3 from '../../asserts/bg3.png'
 import {AuthContext} from '../../context/AuthWrapper'
 import { useRouter } from "next/router";
-import  Link from "next/link";
+import Link from "next/link";
 
 function index()
 {
@@ -22,7 +22,7 @@ function index()
     const [error,seterror]= React.useState(''); 
     const [loading,setloading] = React.useState(false); 
     
-    const {login,user} = useContext(AuthContext)
+    const {forgot,user} = useContext(AuthContext)
 
     const handleClick=async()=>{
         
@@ -31,9 +31,9 @@ function index()
         try{
             setloading(true)
             seterror('')
-            await login(email,password);
-            console.log("Logged in");
-            router.push('/');
+            await forgot(email);
+            console.log("email sent");
+            router.push('/login');
 
         }
         catch(err){
@@ -44,18 +44,14 @@ function index()
         }
         setloading(false)
 
-        
-
     }
 
-    useEffect(()=>{
-        if(user)
-        {
-            console.log(user);
-            console.log("bye bye")
-            // router.push('/');
-        }
-    },[user])
+    // useEffect(()=>{
+    //     if(user)
+    //     {
+    //         router.push('/');
+    //     }
+    // },[user])
 
     return (
 
@@ -93,22 +89,22 @@ function index()
                 {/* <Image src={Insta} /> */}
                 <h1>Instagram</h1>
                 <TextField id="outlined-basic" margin="dense" size="small" fullWidth label="Email" variant="outlined"  value={email} onChange={(e)=>setemail(e.target.value)} />
-                <TextField id="outlined-basic" margin="dense" size="small" fullWidth label="Password" type="password" variant="outlined" value={password} onChange={(e)=>setpassword(e.target.value)}/>
+                {/* <TextField id="outlined-basic" margin="dense" size="small" fullWidth label="Password" type="password" variant="outlined" value={password} onChange={(e)=>setpassword(e.target.value)}/> */}
                 
                
  {               error != ''  &&
                 <div style={{color:"red", marginTop: '0.5rem'}}>{error}!! </div>
 }
                 <Button variant="contained" fullWidth margin="dense" component="span" style={{marginTop: '1rem'}} onClick={handleClick} disabled={loading}>
-                      LOGIN UP
+                      send Password
                 </Button>
 
-                <div style={{color:"blue" , marginTop: '1rem' }}> <Link href={'/forgotPass'}  > <span>Forget Password? </span>  </Link></div>
+                {/* <div style={{color:"blue" , marginTop: '1rem' }}> Forget Password?</div> */}
 
                 </div>
 
                 <div className="bottom-card">
-                    Don't Have an Account? <Link href={"/signup"}> <span style={{color:'blue'}}> SIGN UP </span></Link>
+                    Don't Have an Account? <Link href={'./signup'}> <span style={{color:'blue'}}> SIGN UP </span> </Link>
 
                 </div>
                 </div>

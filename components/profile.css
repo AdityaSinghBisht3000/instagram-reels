@@ -1,0 +1,47 @@
+.profup{
+    margin-left: 22%;
+    margin-right: 22%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    /* align-self: center; */
+    justify-content: space-around;
+}
+
+.profvid{
+    margin-left: 18%;
+    margin-right: 18%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    display: flex;
+    align-items: center;
+    /* align-content: center; */
+    /* align-self: center; */
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+.profvid > video{
+    width: 10rem;
+    height: 20rem;
+    padding: 0.5rem;
+
+}
+
+span > video
+{
+    width: 10rem;
+    height: 20rem;
+    padding: 0.5rem;
+}
+
+@media only screen and (max-width: 500px)
+{
+    .profup{
+        flex-direction: column;
+        align-items: center;
+    }
+}
