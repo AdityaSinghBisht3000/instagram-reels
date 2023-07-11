@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import ProfileComp from "../components/profileComp";
 import { AuthContext } from "../context/AuthWrapper";
 import { useRouter } from "next/router";
-function profile()
+function Profile()
 {
     const {user} = useContext(AuthContext);
   
@@ -16,4 +16,4 @@ function profile()
         <ProfileComp /> : <Redirect/>
     )
 }
-export default profile;
+export default Profile;

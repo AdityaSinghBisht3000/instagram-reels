@@ -13,7 +13,7 @@ import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import {db, storage} from '../../firebase'
 import { doc, setDoc } from "firebase/firestore";
 
-function index()
+function Index()
 {
 
     const router = useRouter();
@@ -134,4 +134,4 @@ uploadTask.on('state_changed',
     )
 }
 
-export default index
+export default Index

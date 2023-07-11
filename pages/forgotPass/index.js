@@ -14,7 +14,7 @@ import {AuthContext} from '../../context/AuthWrapper'
 import { useRouter } from "next/router";
 import Link from "next/link";
 
-function index()
+function Index()
 {
     const router = useRouter();
     const [email,setemail]= React.useState(null); 
@@ -73,11 +73,11 @@ function index()
                         isPlaying={true}
                      >
                         <Slider>
-                        <slide index={0}><Image src={bg1} /></slide>
-                        <slide index={1}><Image src={bg2} /></slide>
-                        <slide index={2}><Image src={bg3} /></slide>
+                        {/* <slide Index={0}><Image src={bg1} /></slide>
+                        <slide Index={1}><Image src={bg2} /></slide>
+                        <slide Index={2}><Image src={bg3} /></slide>
 
-                        
+                         */}
 
                         </Slider>
                      </CarouselProvider>
@@ -104,7 +104,7 @@ function index()
                 </div>
 
                 <div className="bottom-card">
-                    Don't Have an Account? <Link href={'./signup'}> <span style={{color:'blue'}}> SIGN UP </span> </Link>
+                    Don&apos;t Have an Account? <Link href={'./signup'}> <span style={{color:'blue'}}> SIGN UP </span> </Link>
 
                 </div>
                 </div>
@@ -114,4 +114,4 @@ function index()
     )
 }
 
-export default index
+export default Index
